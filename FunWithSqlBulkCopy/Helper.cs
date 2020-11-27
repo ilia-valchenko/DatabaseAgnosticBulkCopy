@@ -114,10 +114,10 @@ namespace FunWithSqlBulkCopy
                         connection.Open();
                     }
 
-                    using (var bulk = new BulkOperation(connection))
+                    using (var bulkOperation = new BulkOperation(connection))
                     {
-                        bulk.DestinationTableName = tableName;
-                        bulk.BulkInsert(dataTable);
+                        bulkOperation.DestinationTableName = tableName;
+                        bulkOperation.BulkInsert(dataTable);
                     }
                 }
             }
